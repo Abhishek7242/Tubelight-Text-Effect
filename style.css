@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  body {
+            min-height: 100vh;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container button {
+            transform: rotateX(21deg) rotateY(-28deg); /* Apply 3D rotation */
+            position: relative;
+            font-size: 40px;
+            font-weight: 500;
+            padding: 20px 55px;
+            background: transparent;
+            outline: none;
+            color: rgb(0, 0, 0);
+            background: rgb(67, 67, 67);
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            z-index: 1;
+            transition: .4s ;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Add shadow for 3D effect */
+        }
+       
+        .container button::before {
+            text-shadow: 0 0 20px black;
+            transition: .4s;
+            display: flex;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            transform: translate(-15px, -15px);
+            z-index: 0;
+            content: 'BUTTON';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 40px;
+            font-weight: 500;
+            background: transparent;
+            outline: none;
+            color: rgb(0, 255, 0);
+            border: 2px solid rgb(0, 255, 0);
+            border-radius: 10px;
+        }
+             .container button:hover {
+            color: rgb(0, 255, 0);
+            background-color: rgb(0, 255, 0);
+            box-shadow: 0 0 40px rgb(0, 255, 0);
+        }
+        .container button:hover::before {
+            color: black;
+            transform: translate(0px, 0px);
+            text-shadow: none;
+
+        }
+    
